@@ -1,0 +1,21 @@
+.cadastro {
+  margin-top: 1rem;
+  padding: 10px;
+}
+.cadastro p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.subtitle {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 2rem;
+}
+.subtitle::after {
+  content: "";
+  display: block;
+  background: #ddd;
+  height: 0.5rem;
+  width: 3rem;
+  border-radius: 0.2rem;
+}
