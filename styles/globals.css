@@ -12,6 +12,15 @@ body {
   animation: animeLeft 0.4s forwards;
   padding: 10px;
 }
+.margin {
+  padding: 10px;
+}
+.loading {
+  font-family: var(--type-second);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 .title {
   font-family: var(--type-second);
   line-height: 1;
@@ -20,12 +29,24 @@ body {
   position: relative;
   z-index: 1;
 }
+.animeDown {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeDown 0.5s forwards;
+}
+@keyframes animeDown {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}
+
 .title::after {
   content: "";
   display: block;
   width: 1.5rem;
   height: 1.5rem;
-  background: rgb(255, 221, 71);
+  background: rgb(192, 121, 240);
   position: absolute;
   bottom: 5px;
   left: -5px;
@@ -79,4 +100,94 @@ a {
 
 * {
   box-sizing: border-box;
+}
+.navHeaderUser ul {
+  display: flex;
+  gap: 2rem;
+}
+.navHeaderUser a,
+.navHeaderUser button {
+  background: #eee;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.navHeaderUser a:hover,
+.navHeaderUser button:hover,
+.navHeaderUser a:focus,
+.navHeaderUser a:focus,
+.mobileButton:hover {
+  box-shadow: 0 0 0 3px white;
+  border-color: #333;
+  outline: none;
+}
+.mobileButton:hover {
+  box-shadow: 0 0 0 3px #eee;
+  border-color: #333;
+  outline: none;
+}
+
+.mobileButton {
+  background: #eee;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  display: none;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.mobileButton::after {
+  transition: 0.2s;
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  box-shadow: 0 6px currentColor, 0 -6px currentColor;
+}
+.mobileActive::after {
+  transform: rotate(90deg);
+  width: 4px;
+  height: 4px;
+  box-shadow: 0 8px currentColor, 0 -8px currentColor;
+}
+@media (max-width: 40rem) {
+  .navHeaderUser {
+    display: none;
+    position: absolute;
+    right: 15px;
+  }
+  .navHeaderUser.mobileActive ul {
+    position: absolute;
+    right: -5px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    top: 33px;
+    gap: 1rem;
+  }
+  .navHeaderUser.mobileActive ul li {
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  .navHeaderUser.mobileActive {
+    display: block;
+  }
+  .mobileButton {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
 }

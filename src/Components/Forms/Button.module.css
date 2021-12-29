@@ -4,9 +4,10 @@
   cursor: pointer;
   border: none;
   border-radius: 0.4rem;
-  background: #fb1;
+  background: rgb(121, 64, 168);
   min-width: 8rem;
-  color: #764701;
+  color: white;
+
   padding: 0.8rem 1rem;
   box-sizing: border-box;
   transition: 0.1s;
@@ -14,7 +15,7 @@
 .button:hover,
 .button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
+  box-shadow: 0 0 0 3px rgb(182, 74, 233), 0 0 0 4px rgb(204, 63, 230);
 }
 .button:disabled {
   opacity: 0.5;

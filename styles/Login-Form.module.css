@@ -1,10 +1,11 @@
 .form {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .perdeu {
   display: inline-block;
   color: #666;
   line-height: 1;
+  margin-bottom: 2rem;
 }
 .perdeu::after {
   content: "";
@@ -12,4 +13,44 @@
   width: 100%;
   background: currentColor;
   display: block;
+}
+.login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  gap: 2rem;
+}
+.login::before {
+  display: block;
+  content: "";
+  background: url("../src/Assets/login3.jpg") no-repeat center center;
+  background-size: cover;
+}
+.cadastro {
+  margin-top: 1rem;
+}
+.cadastro p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.subtitle {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 2rem;
+}
+.subtitle::after {
+  content: "";
+  display: block;
+  background: #ddd;
+  height: 0.5rem;
+  width: 3rem;
+  border-radius: 0.2rem;
+}
+@media (max-width: 40rem) {
+  .login {
+    grid-template-columns: 1fr;
+  }
+  .login::before {
+    display: none;
+  }
 }

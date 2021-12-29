@@ -1,0 +1,20 @@
+.cadastro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  gap: 2rem;
+}
+.cadastro::before {
+  display: block;
+  content: "";
+  background: url("../src/Assets/login3.jpg") no-repeat center center;
+  background-size: cover;
+}
+@media (max-width: 40rem) {
+  .cadastro {
+    grid-template-columns: 1fr;
+  }
+  .cadastro::before {
+    display: none;
+  }
+}

@@ -15,13 +15,21 @@ function MyApp({ Component }) {
   const [login, setLogin] = React.useState(null);
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
+  const [headerUser, setHeaderUser] = React.useState(false);
+  React.useEffect(() => {
+    router.events.on("routeChangeStart", (url) => {
+      if (url === "/") {
+        setHeaderUser(false);
+      }
+    });
+  }, [router]);
   const userLogout = React.useCallback(async function () {
     setLogin(false);
     setData(null);
     setError(null);
     setLoading(false);
     window.localStorage.removeItem("token");
-    router.push("/User/Login-Home");
+    router.push("/User/Login-Formulario");
   }, []);
   React.useEffect(() => {
     async function autoLogin() {
@@ -48,9 +56,10 @@ function MyApp({ Component }) {
     const { url, options } = USER_GET(token);
     const response = await fetch(url, options);
     const json = await response.json();
+    window.localStorage.setItem("userID", json.id);
     setData(json);
     setLogin(true);
-    router.push(`/Account/@${json.username}`);
+    setHeaderUser(true);
   }
   async function userLogin(username, password) {
     try {
@@ -72,13 +81,20 @@ function MyApp({ Component }) {
 
   return (
     <>
-      <Header data={data} userLogout={userLogout} />
+      <Header
+        data={data}
+        headerUser={headerUser}
+        setHeaderUser={setHeaderUser}
+        userLogout={userLogout}
+        loading={loading}
+      />
       <Component
         userLogin={userLogin}
         erro={error}
         login={login}
         loading={loading}
         data={data}
+        userLogout={userLogout}
       />
       <Footer />
     </>

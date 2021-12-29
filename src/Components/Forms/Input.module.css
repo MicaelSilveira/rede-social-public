@@ -16,8 +16,8 @@
 .input:focus {
   outline: none;
   background: white;
-  border-color: #fb1;
-  box-shadow: 0 0 0 3px #fea;
+  border-color: rgb(149, 48, 167);
+  box-shadow: 0 0 0 3px rgb(230, 131, 243);
 }
 .label {
   display: block;
