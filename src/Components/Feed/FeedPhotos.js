@@ -1,9 +1,6 @@
 import React from "react";
-import FeedPhotoItem from "./FeedPhotoItem";
 import useFetch from "../Hooks/useFetch";
-import { PHOTOS_GET, API_URL } from "../api";
-import Error from "../Helper/Error";
-import Loading from "../Helper/Loading";
+import { API_URL } from "../api";
 import styles from "./FeedPhotos.module.css";
 const FeedPhotos = () => {
   const userID = window.localStorage.getItem("userID");
@@ -21,7 +18,8 @@ const FeedPhotos = () => {
     async function fetchPhotos() {
       const { url, options } = _GET({ page: 1, total: 5 });
       console.log(url);
-      await request(url, options);
+      const { json } = await request(url, options);
+      console.log(json);
     }
     fetchPhotos();
   }, []);
@@ -34,13 +32,7 @@ const FeedPhotos = () => {
   //   }
   //   fetchPhotos();
   // }, []);
-  if (error) <Error error={error} />;
-  if (loading) {
-    return <Loading />;
-  }
-
   if (dataFetch) {
-    console.log(dataFetch);
     return (
       <ul className={`${styles.feed} animeLeft`}>
         {dataFetch.map((photo) => {

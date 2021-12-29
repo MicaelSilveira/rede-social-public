@@ -11,10 +11,7 @@ const PostarFoto = ({ data }) => {
   const nome = useForm();
   const [img, setImg] = React.useState({});
   const { dataFetch, error, loadingFetch, request } = useFetch();
-  // React.useEffect(() => {
-  //   const username = data.username;
-  //   if (dataFetch) router.push(`/Account/@${username}/Minhas-Fotos`);
-  // }, [dataFetch, router]);
+
   async function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData();
@@ -22,11 +19,11 @@ const PostarFoto = ({ data }) => {
     formData.append("nome", nome.value);
     formData.append("peso", "10");
     formData.append("idade", "10");
-
+    const username = data.username;
     const token = window.localStorage.getItem("token");
     const { url, options } = PHOTO_POST(formData, token);
     const { response } = await request(url, options);
-    console.log(response);
+    if (response.ok) router.push(`/Account/@${username}/Minhas-Fotos`);
   }
   function handleChange({ target }) {
     setImg({
@@ -36,9 +33,9 @@ const PostarFoto = ({ data }) => {
   }
   if (data) {
     return (
-      <>
+      <div className="animeLeft">
         <h1 className="title">Postar Foto</h1>
-        <section className={`${styles.photoPost} animeLeft`}>
+        <section className={`${styles.photoPost}`}>
           <form onSubmit={handleSubmit}>
             <Input label="Nome" type="text" name="name" {...nome} />
             <input
@@ -63,7 +60,7 @@ const PostarFoto = ({ data }) => {
             )}
           </div>
         </section>
-      </>
+      </div>
     );
   } else return null;
 };

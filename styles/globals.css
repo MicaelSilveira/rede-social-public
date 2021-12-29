@@ -163,6 +163,9 @@ a {
   box-shadow: 0 8px currentColor, 0 -8px currentColor;
 }
 @media (max-width: 40rem) {
+  .title {
+    font-size: 35px;
+  }
   .navHeaderUser {
     display: none;
     position: absolute;
