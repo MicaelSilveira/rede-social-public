@@ -1,12 +1,16 @@
 .feed {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   margin-bottom: 1rem;
   justify-items: center;
 }
 @media (max-width: 40rem) {
   .feed {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  .photo:nth-child(2) {
+    grid-column: initial;
+    grid-row: inherit;
   }
 }

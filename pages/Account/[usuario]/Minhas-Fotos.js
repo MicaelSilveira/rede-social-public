@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import styles from "../../../styles/Minhas-Fotos.module.css";
-import FeedPhotos from "../../../src/Components/Feed/FeedPhotos";
+import Feed from "../../../src/Components/Feed/Feed";
 const MinhasFotos = ({ data }) => {
   if (data) {
     const userName = data.nome;
@@ -12,7 +12,7 @@ const MinhasFotos = ({ data }) => {
         </Head>
         <h1 className="title">Minhas fotos</h1>
         <section>
-          <FeedPhotos />
+          <Feed />
         </section>
       </div>
     );

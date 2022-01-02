@@ -1,0 +1,35 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  margin: 1rem;
+}
+.textArea {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-family: monospace;
+  resize: none;
+  border: 1px solid #eee;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  background: #eee;
+  transition: 0.2s;
+}
+.textArea:focus,
+.textArea:hover {
+  outline: none;
+  border-color: rgb(135, 50, 192);
+}
+.button {
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: transparent solid 1px;
+  margin-left: 5px;
+}
+.button:focus,
+.button:hover {
+  outline: none;
+  border-color: rgb(135, 50, 192);
+}

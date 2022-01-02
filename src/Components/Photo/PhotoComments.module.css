@@ -1,0 +1,20 @@
+.comments {
+  overflow-y: scroll;
+  height: 100%;
+  word-break: break-word;
+  padding: 0 2rem;
+}
+.comments li {
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+@media (max-width: 64rem) {
+  .comments {
+    height: 100px;
+  }
+}
+@media (max-width: 27rem) {
+  .comments {
+    height: 50px;
+  }
+}

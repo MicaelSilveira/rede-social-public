@@ -1,24 +1,13 @@
 import React from "react";
 import useFetch from "../Hooks/useFetch";
-import { API_URL } from "../api";
-import styles from "./FeedPhotos.module.css";
-import FeedPhotoItem from "./FeedPhotoItem";
+import { PHOTOS_GET } from "../api";
+import styles from "../Feed/FeedPhotos.module.css";
+import FeedPhotoItem from "../Feed/FeedPhotoItem";
 const FeedPhotos = ({ setModalPhoto }) => {
-  const userID = window.localStorage.getItem("userID");
-  const { dataFetch, error, loadingFetch, request } = useFetch();
-  function _GET({ page, total }) {
-    return {
-      url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${userID}`,
-      options: {
-        method: "GET",
-        cache: "no-store",
-      },
-    };
-  }
+  const { dataFetch, loadingFetch, request } = useFetch();
   React.useEffect(() => {
     async function fetchPhotos() {
-      const { url, options } = _GET({ page: 1, total: 5 });
-
+      const { url, options } = PHOTOS_GET();
       await request(url, options);
     }
     fetchPhotos();
