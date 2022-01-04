@@ -1,14 +1,14 @@
-{
-  "git.enabled": false,
-  "files.exclude": {
-    ".next": true,
-    ".vscode": true,
-    "node_modules": true,
-    "README.md": true,
-    "package-lock.json": true,
-    ".gitgnore": false,
-    "next.config.js": true,
-    "package.json": true,
-    ".eslintrc.json":true,
-  }
-}
+// {
+//   "git.enabled": false,
+//   "files.exclude": {
+//     ".next": true,
+//     ".vscode": true,
+//     "node_modules": true,
+//     "README.md": true,
+//     "package-lock.json": true,
+//     ".gitgnore": false,
+//     "next.config.js": true,
+//     "package.json": true,
+//     ".eslintrc.json":true,
+//   }
+// }
