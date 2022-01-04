@@ -11,9 +11,9 @@ const MinhasFotos = ({ data }) => {
           <title> @{userName}| Minhas Fotos</title>
         </Head>
         <h1 className="title">Minhas fotos</h1>
-        <section>
+        <div>
           <Feed />
-        </section>
+        </div>
       </div>
     );
   } else return null;

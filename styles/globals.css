@@ -105,6 +105,7 @@ a {
   display: flex;
   gap: 2rem;
 }
+
 .navHeaderUser a,
 .navHeaderUser button {
   background: #eee;
@@ -123,7 +124,7 @@ a {
 .navHeaderUser a:focus,
 .navHeaderUser a:focus,
 .mobileButton:hover {
-  box-shadow: 0 0 0 3px white;
+  box-shadow: 0 0 0 3px rgb(204, 78, 216);
   border-color: #333;
   outline: none;
 }
@@ -173,7 +174,7 @@ a {
   }
   .navHeaderUser.mobileActive ul {
     position: absolute;
-    right: -5px;
+    right: 2px;
     gap: 10px;
     display: flex;
     flex-direction: column;

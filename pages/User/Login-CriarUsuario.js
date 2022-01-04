@@ -39,7 +39,7 @@ const LoginCriarUsuario = ({ userLogin, login, data }) => {
           <Input label="Email" type="email" name="email" {...email} />
           <Input label="Senha" type="password" name="password" {...password} />
           {loadingFetch ? (
-            <Button disabled>carregando...</Button>
+            <Button disabled>Carregando...</Button>
           ) : (
             <Button>Cadastre-se</Button>
           )}

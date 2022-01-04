@@ -18,12 +18,11 @@ const Header = ({ data, headerUser, setHeaderUser, userLogout, loading }) => {
           <>
             <Link href={`/Account/@${data.nome}`}>
               <a onClick={() => setHeaderUser(true)} className={styles.login}>
-                <strong>{headerUser ? `@${data.nome}` : "Sua Conta"}</strong>
+                <strong>{`@${data.nome}`}</strong>
               </a>
             </Link>
-            {headerUser && (
-              <HeaderUser userName={data.nome} userLogout={userLogout} />
-            )}
+
+            <HeaderUser userName={data.nome} userLogout={userLogout} />
           </>
         ) : (
           <Link href="/User/Login-Formulario">

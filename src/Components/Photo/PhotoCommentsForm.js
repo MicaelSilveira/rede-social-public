@@ -11,12 +11,16 @@ const PhotoCommentsForm = ({ id, setComments }) => {
   const inputRef = React.useRef();
   async function handleSubmit(event) {
     event.preventDefault();
+    if (inputRef.current.value === "") {
+      inputRef.current.placeholder = "Preencha um valor";
+      return false;
+    }
     const { url, options } = COMMENT_POST(id, { comment });
     const { response, json } = await request(url, options);
     if (response.ok) {
-      inputRef.current.focus();
       setComment("");
       setComments((cmm) => [...cmm, json]);
+      inputRef.current.placeholder = "Comente";
     }
   }
   return (

@@ -4,7 +4,7 @@ import React from "react";
 const Estatisticas = ({ login }) => {
   if (login)
     return (
-      <div>
+      <div className="animeLeft">
         <Head>
           <title> | Estatisticas</title>
         </Head>

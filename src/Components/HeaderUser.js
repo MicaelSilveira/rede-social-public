@@ -31,13 +31,6 @@ const HeaderUser = ({ userName, userLogout }) => {
             </Link>
           </li>
           <li>
-            <Link href={`/Account/@${userName}/Estatisticas`}>
-              <a>
-                <Image src={Estatic} />
-              </a>
-            </Link>
-          </li>
-          <li>
             <button onClick={userLogout}>
               <Image src={Sair} />
             </button>

@@ -23,6 +23,7 @@ const PostarFoto = ({ data }) => {
     const token = window.localStorage.getItem("token");
     const { url, options } = PHOTO_POST(formData, token);
     const { response } = await request(url, options);
+    console.log(response);
     if (response.ok) router.push(`/Account/@${username}/Minhas-Fotos`);
   }
   function handleChange({ target }) {

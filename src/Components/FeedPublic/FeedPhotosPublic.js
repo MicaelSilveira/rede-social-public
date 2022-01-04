@@ -13,7 +13,7 @@ const FeedPhotos = ({ setModalPhoto }) => {
     fetchPhotos();
   }, []);
 
-  if (loadingFetch) return <p className="loading">Carregando</p>;
+  if (loadingFetch) return <p className="loading animeLeft">Carregando</p>;
   if (dataFetch) {
     return (
       <ul className={`${styles.feed} animeLeft`}>

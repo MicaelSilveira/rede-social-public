@@ -16,6 +16,7 @@ function MyApp({ Component }) {
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [headerUser, setHeaderUser] = React.useState(false);
+
   React.useEffect(() => {
     router.events.on("routeChangeStart", (url) => {
       if (url === "/") {
@@ -96,7 +97,7 @@ function MyApp({ Component }) {
         data={data}
         userLogout={userLogout}
       />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

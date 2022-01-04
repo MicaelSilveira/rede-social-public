@@ -6,9 +6,8 @@
     "node_modules": true,
     "README.md": true,
     "package-lock.json": true,
-    ".gitgnore": true,
+    ".gitgnore": false,
     "next.config.js": true,
-    ".gitignore": true,
     "package.json": true,
     ".eslintrc.json":true,
   }
