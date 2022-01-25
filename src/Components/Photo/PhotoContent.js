@@ -18,9 +18,7 @@ const PhotoContent = ({ data }) => {
             <span className={styles.visualizaçao}>{photo.acessos}</span>
           </p>
           <h1 className="title">
-            <Link href={`/Foto/${photo.id}`}>
-              <a>{photo.title}</a>
-            </Link>
+            <a>{photo.title}</a>
           </h1>
         </div>
       </div>
